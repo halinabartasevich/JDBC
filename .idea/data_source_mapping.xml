@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/c129d285-0f72-42c1-8fb2-0d1338e91af7/console.sql" value="c129d285-0f72-42c1-8fb2-0d1338e91af7" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day01/task1_select.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day01/task2_distinct.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day01/task3_where.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day02/Task2_like.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day02/task1_recap.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day02/task3_multi_row_functions.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day02/task4_group_by.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day02/task5_having.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day03/task1_recap.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day03/task2_subquery.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day03/task3_rownum.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day03/task4_sting_functions.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day03/task5_views.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day03/task6_ddl_dml.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day04/task1_recap.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day04/task2_joins.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day04/task3_self_join.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day04/task4_docuport.sql" value="d3d2ca27-65e7-4a2e-a489-91ae2bd5090e" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/day05/task1_set_operators.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/homework/task1_homework.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/homework/task2_homework.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/homework/task3_homework.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/querries/homework/test.sql" value="77f078dc-7303-450e-8ef4-80075c450570" />
+  </component>
+</project>

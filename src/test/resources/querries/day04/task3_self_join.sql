@@ -1,0 +1,131 @@
+SELECT * FROM EMPLOYEES;
+
+/*
+ SELF JOINS
+ It is possible to join a table to itself
+ */
+
+
+-- I want to get employee info with their manager info
+SELECT * FROM EMPLOYEES E1 INNER JOIN EMPLOYEES E2
+ON E1.EMPLOYEE_ID = E2.MANAGER_ID;
+-- Get me the employees first name and last name AND their managers FIRST and LAST name
+SELECT EMP.EMPLOYEE_ID AS EMP_ID, EMP.FIRST_NAME, EMP.LAST_NAME, EMP.MANAGER_ID, MAN.EMPLOYEE_ID AS MAN_EMP_ID, MAN.FIRST_NAME, MAN.LAST_NAME FROM EMPLOYEES EMP INNER JOIN EMPLOYEES MAN
+                                                                                                                                                                            ON MAN.EMPLOYEE_ID = EMP.MANAGER_ID;
+
+
+SELECT EMP.FIRST_NAME, EMP.LAST_NAME, MAN.FIRST_NAME, MAN.LAST_NAME FROM EMPLOYEES EMP INNER JOIN EMPLOYEES MAN
+                                                                                                  ON MAN.EMPLOYEE_ID = EMP.MANAGER_ID;
+
+SELECT * FROM EMPLOYEES
+Where MANAGER_ID = 100;
+/*
+ 201
+149
+148
+147
+146
+145
+124
+123
+122
+121
+120
+114
+102
+101
+
+ */
+--
+
+/*
+    INNER JOINS
+
+    Inner Join produces only the set of records that match in both Tables.
+    Get me the information for only matching info from both tables
+ */
+
+-- GET ME ALL INFO FROM BOTH TABLES BASED ON ONLY MATCHING DATA
+SELECT * FROM ADDRESS INNER JOIN CUSTOMER
+                                 ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+SELECT ADDRESS.ADDRESS_ID, ADDRESS, PHONE, CUSTOMER_ID, FIRST_NAME, LAST_NAME, CUSTOMER.ADDRESS_ID FROM ADDRESS INNER JOIN CUSTOMER
+                                                                                                                           ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+SELECT ADDRESS, PHONE, ADDRESS.ADDRESS_ID, CUSTOMER.ADDRESS_ID, CUSTOMER_ID, FIRST_NAME, LAST_NAME FROM ADDRESS INNER JOIN CUSTOMER
+                                                                                                                           ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+SELECT ADDRESS, PHONE, ADDRESS.ADDRESS_ID, FIRST_NAME, LAST_NAME FROM ADDRESS INNER JOIN CUSTOMER
+                                                                                         ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+SELECT FIRST_NAME, LAST_NAME, ADDRESS, PHONE FROM ADDRESS INNER JOIN CUSTOMER
+                                                                     ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+
+/*
+    LEFT OUTER JOINS / LEFT JOINS
+
+        ALL INFO FROM LEFT TABLE INCLUDING MATCHING ONES FROM RIGHT TABLE
+        FOR NONE MATCHING ONES IN LEFT TABLE IT WILL BE NUL FROM RIGHT TABLE
+
+ */
+
+
+--: GET ME ALL INFO FROM ADDRESS TABLE INCLUDING MATCHING DATA FROM CUSTOMER TABLE
+SELECT  * FROM ADDRESS LEFT OUTER JOIN CUSTOMER
+                                       ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+--: GET ME ALL INFO FROM CUSTOMER TABLE INCLUDING MATCHING DATA FROM ADDRESS TABLE
+SELECT  * FROM CUSTOMER LEFT OUTER JOIN ADDRESS
+                                        ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+
+/*
+    RIGHT OUTER JOINS / RIGHT JOINS
+
+        ALL INFO FROM RIGHT TABLE INCLUDING MATCHING ONES FROM LEFT TABLE
+        FOR NONE MATCHING ONES IN RIGHT TABLE IT WILL BE NUL FROM LEFT TABLE
+
+ */
+
+SELECT * FROM ADDRESS RIGHT OUTER JOIN CUSTOMER
+                                       ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+
+SELECT * FROM CUSTOMER RIGHT OUTER JOIN ADDRESS
+                                        ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+
+
+-- FIND ME ALL THE CUSTOMER INFO WHO DOES NOT HAVE ADDRESS
+
+SELECT * FROM CUSTOMER LEFT JOIN ADDRESS
+                                 ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+SELECT * FROM CUSTOMER LEFT JOIN ADDRESS
+                                 ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID
+WHERE CUSTOMER.FIRST_NAME LIKE 'J%';
+
+
+SELECT * FROM CUSTOMER LEFT JOIN ADDRESS
+                                 ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID
+WHERE ADDRESS.ADDRESS_ID IS NULL;
+
+SELECT * FROM CUSTOMER
+WHERE ADDRESS_ID IS NULL;
+
+
+/*
+    FULL OUTER JOINS / FULL JOINS
+
+        ALL INFO FROM RIGHT TABLE and LEFT TABLE INCLUDING MATCHING ONES
+ */
+
+SELECT * FROM ADDRESS FULL JOIN CUSTOMER
+                                ON ADDRESS.ADDRESS_ID = CUSTOMER.ADDRESS_ID;
+
+
+-- AS - > changing the column name. We have similar concept with JOINS without using AS explicitly
+
+SELECT * FROM ADDRESS A FULL JOIN CUSTOMER C
+                                  ON A.ADDRESS_ID = C.ADDRESS_ID;

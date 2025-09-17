@@ -1,0 +1,140 @@
+SELECT * FROM EMPLOYEES;
+/*
+    DDL
+        - Create
+        - Alter
+        - Drop
+        - Truncate
+
+    DML
+        - Select (SELECT)
+        - Insert
+        - Update
+        - Delete
+ */
+
+
+-- DDL
+CREATE TABLE SCRUMTEAM(
+                          EMP_ID NUMBER PRIMARY KEY,
+                          FIRST_NAME varchar(20) NOT NULL,
+                          JOB_TITLE varchar(30) NOT NULL,
+                          PHONE_NUMBER varchar(10) UNIQUE,
+                          AGE INTEGER,
+                          SALARY DECIMAL
+);
+
+SELECT * FROM SCRUMTEAM;
+
+
+-- DML
+-- INSERT
+INSERT INTO SCRUMTEAM (EMP_ID, FIRST_NAME, JOB_TITLE, PHONE_NUMBER, AGE, SALARY)
+VALUES (1, 'Tom', 'DEV', '1234567890', 25, 100.00);
+
+
+INSERT INTO SCRUMTEAM (EMP_ID, FIRST_NAME, JOB_TITLE, PHONE_NUMBER, AGE, SALARY )
+VALUES (2, 'JERRY', 'QA', '1234', 30, 110.25);
+
+INSERT INTO SCRUMTEAM (EMP_ID, FIRST_NAME, JOB_TITLE, PHONE_NUMBER, AGE, SALARY )
+VALUES (3, 'Vinnie', 'PO', '1234567891', 35, 120.25);
+
+
+INSERT INTO SCRUMTEAM (SALARY, EMP_ID, FIRST_NAME, AGE, JOB_TITLE, PHONE_NUMBER )
+VALUES ( 120.25, 4, 'Vinnie', 35, 'PO', '1234567892');
+
+INSERT INTO SCRUMTEAM
+VALUES (5, 'Pooh', 'PM', '1234567893', 40, 200.20);
+
+commit; -- save all your work
+-- or: commit work;
+
+
+-- DML
+-- UPDATE
+
+SELECT * FROM SCRUMTEAM;
+
+UPDATE SCRUMTEAM
+SET SALARY = SALARY + 50;
+
+SELECT FIRST_NAME, SALARY + 50 FROM SCRUMTEAM; -- getting them in the result
+
+
+UPDATE SCRUMTEAM
+SET SALARY = SALARY + 50
+WHERE JOB_TITLE = 'PO';
+
+
+SELECT INITCAP(FIRST_NAME) FROM SCRUMTEAM WHERE EMP_ID = 2;
+
+UPDATE SCRUMTEAM
+SET FIRST_NAME = (SELECT INITCAP(FIRST_NAME) FROM SCRUMTEAM WHERE EMP_ID = 2)
+WHERE EMP_ID = 2;
+
+
+UPDATE SCRUMTEAM
+SET PHONE_NUMBER = '1234567894'
+WHERE EMP_ID = 2;
+
+
+
+-- DML
+-- DELETE
+SELECT * FROM SCRUMTEAM;
+
+DELETE FROM SCRUMTEAM
+WHERE EMP_ID = 4;
+
+commit;
+
+
+-- DDL
+-- ALTER
+-- add column
+ALTER TABLE SCRUMTEAM
+    ADD SSN NUMBER(7) unique;
+
+UPDATE SCRUMTEAM
+SET SSN = 1234567
+WHERE FIRST_NAME = 'Tom';
+
+SELECT * FROM SCRUMTEAM;
+
+UPDATE SCRUMTEAM
+SET SSN = 1234568
+WHERE FIRST_NAME = 'Jerry';
+
+
+-- Rename column
+ALTER TABLE SCRUMTEAM
+    RENAME COLUMN SSN TO SOC_SEC_NUMBER;
+
+UPDATE SCRUMTEAM
+SET SOC_SEC_NUMBER = 1234569
+WHERE FIRST_NAME = 'Pooh';
+
+-- Remove column completely
+ALTER TABLE SCRUMTEAM
+DROP COLUMN SOC_SEC_NUMBER;
+
+
+
+-- DDL
+    -- TRUNCATE
+TRUNCATE TABLE SCRUMTEAM;
+SELECT * FROM SCRUMTEAM;
+
+
+-- DDL
+-- DROP
+DROP TABLE SCRUMTEAM;
+SELECT * FROM SCRUMTEAM;
+
+
+
+-- IQ: Difference between DELETE, DROP (COLUMN, TABLE) and TRUNCATE?
+-- DELETE: delete single or multiple rows with conditions from a table
+-- DROP COLUMN: delete column
+-- TRUNCATE: delete all rows from a table
+-- DROP TABLE: delete table including columns and data

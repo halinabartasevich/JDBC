@@ -40,7 +40,12 @@ public class DB_Utility {
 
         createConnection(url, username, password);
     }
-
+    public static void docuportCreateConnection(){
+        String url = ConfigurationReader.getProperty("docuportDbUrl") ;
+        String username =   ConfigurationReader.getProperty("docuportDbUsername");
+        String password =  ConfigurationReader.getProperty("docuportDbPassword");
+        createConnection(url, username, password);
+    }
 
     /**
      * Run the sql query provided and return ResultSet object

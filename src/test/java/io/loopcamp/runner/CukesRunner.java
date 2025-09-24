@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         // Make console output for the Cucumber test much more readable and remove any unreadable character.
         // monochrome = false,
-        tags = "@wip"
+        tags = "@docuportDb"
 
 )
 

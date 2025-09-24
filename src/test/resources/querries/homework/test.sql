@@ -1,2 +1,2 @@
-select * FROM EMPLOYEES;
+
 

@@ -1,6 +1,5 @@
 package io.loopcamp.jdbctests.day02;
 
-
 import io.loopcamp.util.ConfigurationReader;
 import io.loopcamp.util.DB_Utility;
 import org.junit.Test;
